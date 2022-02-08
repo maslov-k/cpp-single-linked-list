@@ -298,6 +298,7 @@ public:
 		Node* second_node = begin().node_->next_node;
 		delete begin().node_;
 		head_.next_node = second_node;
+		--size_;
 	}
 
 	// Удаляет элемент, следующий за pos.
@@ -308,6 +309,7 @@ public:
 		Node* deletion_node = pos.node_->next_node;
 		pos.node_->next_node = deletion_node->next_node;
 		delete deletion_node;
+		--size_;
 		return Iterator(pos.node_->next_node);
 	}
 
